@@ -1,12 +1,43 @@
 app.controller('todo-list',function($scope,$http,$rootScope){
 
-	$http.get("/test/database.json")
-	.then(function(response){
-		console.log(response)
-		$scope.lists = response.data.lists; 
-		console.log($scope.lists)
-	});
+	//////////////////////////////////Нужно заменить этот код
+	$scope.lists = [
+		{
+			"id":1,
+			"title":"Test 1 title",
+			"todos":[
+				{
+					"id":1,
+					"is_completed":false,
+					"text":"test"
+				},
+				{
+					"id":2,
+					"is_completed":true,
+					"text":"test 2"
+				}
+			]
+		},
+		{
+			"id":2,
+			"title":"Test 2 title",
+			"todos":[
+				{
+					"id":3,
+					"is_completed":false,
+					"text":"test 3"
+				},
+				{
+					"id":4,
+					"is_completed":true,
+					"text":"test 4"
+				}
+			]
+		}
+	]
+	////////////////////////////////////////
 
+	
 	$scope.list = {
 		title:"",
 		text:""
